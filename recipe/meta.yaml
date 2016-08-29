@@ -1,6 +1,6 @@
-{% set version = "2.9.2" %}
+{% set version = "3.0.1" %}
 {% set hash_type = "md5" %}
-{% set hash = "b65c2944dfaa0efb62c0239afb424f5b" %}
+{% set hash = "6e736a6d7bc854b25d44a60bcba5f2f9" %}
 
 package:
   name: pytest
