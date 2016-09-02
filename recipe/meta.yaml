@@ -1,6 +1,4 @@
-{% set version = "3.0.1" %}
-{% set hash_type = "md5" %}
-{% set hash = "6e736a6d7bc854b25d44a60bcba5f2f9" %}
+{% set version = "3.0.2" %}
 
 package:
   name: pytest
@@ -8,14 +6,14 @@ package:
 
 source:
   fn: pytest-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/p/pytest/pytest-{{ version }}.tar.gz
-  {{ hash_type }}: {{ hash }}
+  url: https://github.com/pytest-dev/pytest/archive/{{ version }}.tar.gz
+  sha256: 1badf28fdca28c55a2e866145a36d879166dedfa035319dc69bb71fda1dd6328
 
 build:
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record=record.txt
   entry_points:
     - py.test = py.test:main
-  script: python setup.py install --single-version-externally-managed --record=record.txt
-  number: 0
 
 requirements:
   build:
@@ -40,7 +38,7 @@ about:
   home: http://pytest.org/
   license: MIT
   license_file: LICENSE
-  summary: Simple and powerful testing with Python
+  summary: 'Simple and powerful testing with Python.'
   description: |
     The pytest framework makes it easy to write small tests, yet scales to
     support complex functional testing for applications and libraries.
