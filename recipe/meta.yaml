@@ -24,6 +24,7 @@ requirements:
     - colorama  # [win]
   run:
     - python
+    - setuptools
     - py >=1.4.29
     - argparse  # [py26]
     - colorama  # [win]
