@@ -1,13 +1,15 @@
-{% set version = "3.0.2" %}
+{% set name = "pytest" %}
+{% set version = "3.0.3" %}
+{% set sha256 = "f213500a356800a483e8a146ff971ae14a8df3f2c0ae4145181aad96996abee7" %}
 
 package:
-  name: pytest
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: pytest-{{ version }}.tar.gz
-  url: https://github.com/pytest-dev/pytest/archive/{{ version }}.tar.gz
-  sha256: 1badf28fdca28c55a2e866145a36d879166dedfa035319dc69bb71fda1dd6328
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
 
 build:
   number: 0
