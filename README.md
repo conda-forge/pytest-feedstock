@@ -35,7 +35,6 @@ conda search pytest --channel conda-forge
 ```
 
 
-
 About conda-forge
 =================
 
