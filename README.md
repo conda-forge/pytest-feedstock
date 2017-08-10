@@ -1,7 +1,7 @@
 About pytest
 ============
 
-Home: http://pytest.org/
+Home: https://docs.pytest.org/en/latest/
 
 Package license: MIT
 
