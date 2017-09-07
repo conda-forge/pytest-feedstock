@@ -17,6 +17,7 @@ build:
   entry_points:
     - py.test = py.test:main
     - pytest = py.test:main
+  noarch: python
 
 requirements:
   build:
