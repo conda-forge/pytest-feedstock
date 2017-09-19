@@ -21,11 +21,8 @@ build:
 requirements:
   build:
     - python
-    - py >=1.4.33
     - setuptools
     - setuptools_scm
-    - argparse  # [py26]
-    - colorama  # [win]
   run:
     - python
     - setuptools
@@ -35,7 +32,7 @@ requirements:
 
 test:
   commands:
-    - py.test -h
+    - pytest -h
   imports:
     - pytest
 
