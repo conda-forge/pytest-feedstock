@@ -27,6 +27,7 @@ requirements:
     - python
     - setuptools
     - py >=1.5.0
+    - funcsigs # [py27]
     - colorama  # [win]
     - six >=1.10.0
     - attrs >=17.2.0
