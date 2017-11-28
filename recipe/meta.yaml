@@ -1,6 +1,6 @@
 {% set name = "pytest" %}
-{% set version = "3.2.5" %}
-{% set sha256 = "6d5bd4f7113b444c55a3bbb5c738a3dd80d43563d063fc42dcb0aaefbdd78b81" %}
+{% set version = "3.3.0" %}
+{% set sha256 = "6db1c070aa412c30647b6aeb13c55670f900cf00fbafa003cdde560c3f4a8d76" %}
 
 package:
   name: {{ name|lower }}
@@ -26,9 +26,12 @@ requirements:
   run:
     - python
     - setuptools
-    - py >=1.4.33
-    - argparse  # [py26]
+    - py >=1.5.0
+    - funcsigs  # [py27]
     - colorama  # [win]
+    - six >=1.10.0
+    - attrs >=17.2.0
+    - pluggy >=0.5,<0.7
 
 test:
   commands:
