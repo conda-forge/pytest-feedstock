@@ -1,6 +1,6 @@
 {% set name = "pytest" %}
-{% set version = "3.4.2" %}
-{% set sha256 = "117bad36c1a787e1a8a659df35de53ba05f9f3398fb9e4ac17e80ad5903eb8c5" %}
+{% set version = "3.5.0" %}
+{% set sha256 = "fae491d1874f199537fd5872b5e1f0e74a009b979df9d53d1553fd03da1703e1" %}
 
 package:
   name: {{ name|lower }}
@@ -24,14 +24,15 @@ requirements:
     - setuptools
     - setuptools_scm
   run:
+    - attrs >=17.4.0
+    - colorama  # [win]
+    - funcsigs  # [py27]
+    - more-itertools >=4.0
+    - pluggy >=0.5,<0.7
+    - py >=1.5.0
     - python
     - setuptools
-    - py >=1.5.0
-    - funcsigs  # [py27]
-    - colorama  # [win]
     - six >=1.10.0
-    - attrs >=17.2.0
-    - pluggy >=0.5,<0.7
 
 test:
   commands:
