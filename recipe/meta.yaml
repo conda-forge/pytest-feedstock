@@ -1,6 +1,6 @@
 {% set name = "pytest" %}
-{% set version = "3.6.0" %}
-{% set sha256 = "39555d023af3200d004d09e51b4dd9fdd828baa863cded3fd6ba2f29f757ae2d" %}
+{% set version = "3.6.1" %}
+{% set sha256 = "32c49a69566aa7c333188149ad48b58ac11a426d5352ea3d8f6ce843f88199cb" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   script: python -m pip install . --no-deps --ignore-installed
   entry_points:
     - py.test = py.test:main
