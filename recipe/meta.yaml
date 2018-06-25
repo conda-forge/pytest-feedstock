@@ -19,7 +19,7 @@ build:
     - pytest = py.test:main
 
 requirements:
-  build:
+  host:
     - pip
     - python
     - setuptools
@@ -59,3 +59,4 @@ extra:
     - goanpeca
     - nicoddemus
     - ocefpaf
+    - mingwandroid
