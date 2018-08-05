@@ -1,19 +1,16 @@
-{% set name = "pytest" %}
 {% set version = "3.7.1" %}
-{% set sha256 = "86a8dbf407e437351cef4dba46736e9c5a6e3c3ac71b2e942209748e76ff2086" %}
 
 package:
-  name: {{ name|lower }}
+  name: pytest
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.io/packages/source/p/pytest/pytest-{{ version }}.tar.gz
+  sha256: 86a8dbf407e437351cef4dba46736e9c5a6e3c3ac71b2e942209748e76ff2086
 
 build:
   number: 0
-  script: python -m pip install . --no-deps --ignore-installed
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   entry_points:
     - py.test = py.test:main
     - pytest = py.test:main
@@ -22,7 +19,6 @@ requirements:
   host:
     - pip
     - python
-    - setuptools
     - setuptools_scm
   run:
     - atomicwrites >=1.0
