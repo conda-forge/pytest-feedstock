@@ -34,6 +34,7 @@ requirements:
     - python
     - setuptools >=40.0
     - six >=1.10.0
+    - wcwidth
 
 test:
   commands:
