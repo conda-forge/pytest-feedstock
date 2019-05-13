@@ -29,7 +29,7 @@ requirements:
     - more-itertools >=4.0,<6.0  # [py27]
     - more-itertools >=4.0  # [py>3]
     - pathlib2 >=2.2.0  # [py<36]
-    - pluggy >=0.9
+    - pluggy >=0.9,!=0.10,<1.0
     - py >=1.5.0
     - python
     - setuptools >=40.0
