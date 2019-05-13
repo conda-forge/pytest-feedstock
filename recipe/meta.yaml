@@ -1,4 +1,4 @@
-{% set version = "4.4.2" %}
+{% set version = "4.5.0" %}
 
 package:
   name: pytest
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pytest/pytest-{{ version }}.tar.gz
-  sha256: 62b129bf8368554ca7a942cbdb57ea26aafef46cc65bc317cdac3967e54483a3
+  sha256: 1a8aa4fa958f8f451ac5441f3ac130d9fc86ea38780dd2715e6d5c5882700b24
 
 build:
   number: 0
@@ -29,11 +29,12 @@ requirements:
     - more-itertools >=4.0,<6.0  # [py27]
     - more-itertools >=4.0  # [py>3]
     - pathlib2 >=2.2.0  # [py<36]
-    - pluggy >=0.9
+    - pluggy >=0.9,!=0.10,<1.0
     - py >=1.5.0
     - python
     - setuptools >=40.0
     - six >=1.10.0
+    - wcwidth
 
 test:
   commands:
