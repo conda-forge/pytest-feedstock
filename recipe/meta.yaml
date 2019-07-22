@@ -10,7 +10,7 @@ source:
 
 build:
   skip: True  # [py27]
-  number: 0
+  number: 1
   script: "{{ PYTHON }} setup.py install --single-version-externally-managed --record record.txt"
   entry_points:
     - py.test = py.test:main
@@ -35,6 +35,10 @@ requirements:
     - python
     - setuptools >=40.0
     - wcwidth
+  run_constrained:
+    # pytest-faulthandler 2 is a dummy package.
+    # if an older version of fault-handler is installed, it will conflict with pytest >=5.
+    - pytest-faulthanlder >=2
 
 test:
   commands:
