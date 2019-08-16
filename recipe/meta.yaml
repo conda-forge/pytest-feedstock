@@ -26,8 +26,8 @@ requirements:
     - atomicwrites >=1.0
     - attrs >=17.4.0
     - colorama  # [win]
-    - importlib_metadata >=0.12
-    - more-itertools >=4.0  # [py>3]
+    - importlib_metadata >=0.12  # [py<38]
+    - more-itertools >=4.0
     - packaging
     - pathlib2 >=2.2.0  # [py<36]
     - pluggy >=0.12,<1.0
