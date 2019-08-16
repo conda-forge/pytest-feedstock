@@ -1,4 +1,4 @@
-{% set version = "5.0.1" %}
+{% set version = "5.1.0" %}
 
 package:
   name: pytest
@@ -6,11 +6,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pytest/pytest-{{ version }}.tar.gz
-  sha256: 6ef6d06de77ce2961156013e9dff62f1b2688aa04d0dc244299fe7d67e09370d
+  sha256: 3805d095f1ea279b9870c3eeae5dddf8a81b10952c8835cd628cf1875b0ef031
 
 build:
   skip: True  # [py27]
-  number: 1
+  number: 0
   script: "{{ PYTHON }} setup.py install --single-version-externally-managed --record record.txt"
   entry_points:
     - py.test = py.test:main
@@ -26,8 +26,8 @@ requirements:
     - atomicwrites >=1.0
     - attrs >=17.4.0
     - colorama  # [win]
-    - importlib_metadata >=0.12
-    - more-itertools >=4.0  # [py>3]
+    - importlib_metadata >=0.12  # [py<38]
+    - more-itertools >=4.0
     - packaging
     - pathlib2 >=2.2.0  # [py<36]
     - pluggy >=0.12,<1.0
