@@ -22,7 +22,7 @@ requirements:
     - setuptools >=40.0
     - setuptools_scm
   run:
-    - atomicwrites >=1.0  # [win]
+    - atomicwrites >=1.0
     - attrs >=17.4.0
     - colorama  # [win]
     - importlib_metadata >=0.12  # [py<38]
