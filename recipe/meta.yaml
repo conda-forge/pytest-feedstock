@@ -25,6 +25,7 @@ requirements:
     - atomicwrites >=1.0
     - attrs >=17.4.0, <=19.1.0
     - colorama  # [win]
+    - funcsigs  # [py2k]
     - importlib_metadata >=0.12  # [py<38]
     - more-itertools >=4.0
     - packaging
