@@ -9,7 +9,6 @@ source:
   sha256: f689bf2fc18c4585403348dd56f47d87780bf217c53ed9ae7a3e2d7faa45f8e9
 
 build:
-  skip: True  # [py27]
   number: 1001
   script: "{{ PYTHON }} setup.py install --single-version-externally-managed --record record.txt"
   entry_points:
