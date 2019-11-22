@@ -1,4 +1,4 @@
-{% set version = "5.3.0" %}
+{% set version = "4.0.2" %}
 
 package:
   name: pytest
@@ -6,11 +6,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pytest/pytest-{{ version }}.tar.gz
-  sha256: 1897d74f60a5d8be02e06d708b41bf2445da2ee777066bd68edf14474fc201eb
+  sha256: f689bf2fc18c4585403348dd56f47d87780bf217c53ed9ae7a3e2d7faa45f8e9
 
 build:
-  skip: True  # [py27]
-  number: 0
+  number: 1001
   script: "{{ PYTHON }} setup.py install --single-version-externally-managed --record record.txt"
   entry_points:
     - py.test = py.test:main
@@ -23,9 +22,10 @@ requirements:
     - setuptools >=40.0
     - setuptools_scm
   run:
-    - atomicwrites >=1.0  # [win]
-    - attrs >=17.4.0
+    - atomicwrites >=1.0
+    - attrs >=17.4.0, <=19.1.0
     - colorama  # [win]
+    - funcsigs  # [py2k]
     - importlib_metadata >=0.12  # [py<38]
     - more-itertools >=4.0
     - packaging
@@ -64,3 +64,4 @@ extra:
     - nicoddemus
     - ocefpaf
     - mingwandroid
+    - hoechenberger
