@@ -10,7 +10,7 @@ source:
 
 build:
   skip: True  # [py27]
-  number: 1
+  number: 2
   script: "{{ PYTHON }} setup.py install --single-version-externally-managed --record record.txt"
   entry_points:
     - py.test = py.test:main
