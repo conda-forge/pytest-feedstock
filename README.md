@@ -5,7 +5,7 @@ Home: https://docs.pytest.org/en/latest/
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Simple and powerful testing with Python.
 
