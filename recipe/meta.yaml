@@ -1,4 +1,4 @@
-{% set version = "6.1.2" %}
+{% set version = "6.2.0" %}
 
 package:
   name: pytest
@@ -6,15 +6,15 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pytest/pytest-{{ version }}.tar.gz
-  sha256: c0a7e94a8cdbc5422a51ccdad8e6f1024795939cc89159a0ae7f0b316ad3823e
+  sha256: b12e09409c5bdedc28d308469e156127004a436b41e9b44f9bff6446cbab9152
 
 build:
-  skip: true  # [py27]
+  skip: true  # [py<36]
   number: 0
   script: {{ PYTHON }} setup.py install --single-version-externally-managed --record record.txt
   entry_points:
-    - py.test = py.test:main
-    - pytest = py.test:main
+    - py.test = py.test:console_main
+    - pytest = py.test:console_main
 
 requirements:
   build:
@@ -27,17 +27,16 @@ requirements:
     - setuptools_scm
   run:
     - python
-    - attrs >=17.4.0
+    - attrs >=19.2.0
     - iniconfig
     - more-itertools >=4.0.0
     - packaging
-    - pluggy >=0.12,<1.0
+    - pluggy >=0.12,<1.0.0a1
     - py >=1.8.2
     - toml
     - atomicwrites >=1.0  # [win]
     - colorama  # [win]
     - importlib-metadata >=0.12  # [py<38]
-    - pathlib2 >=2.2.0  # [py<36]
   run_constrained:
     # pytest-faulthandler 2 is a dummy package.
     # if an older version of fault-handler is installed, it will conflict with pytest >=5.
