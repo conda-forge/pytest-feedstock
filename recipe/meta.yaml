@@ -31,7 +31,7 @@ requirements:
     - iniconfig
     - more-itertools >=4.0.0
     - packaging
-    - pluggy >=0.12,<1.0.0a1
+    - pluggy >=0.12,<2
     - py >=1.8.2
     - toml
     - atomicwrites >=1.0  # [win]
