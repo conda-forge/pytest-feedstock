@@ -7,7 +7,7 @@ cdt_name:
 channel_sources:
 - conda-forge
 channel_targets:
-- conda-forge rc
+- conda-forge main
 docker_image:
 - quay.io/condaforge/linux-anvil-aarch64
 pin_run_as_build:
@@ -15,6 +15,6 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.8.* *_cpython
+- 3.10.* *_cpython
 target_platform:
 - linux-aarch64
