@@ -3,7 +3,7 @@ cdt_name:
 channel_sources:
 - conda-forge
 channel_targets:
-- conda-forge rc
+- conda-forge pytest_rc
 docker_image:
 - quay.io/condaforge/linux-anvil-ppc64le
 pin_run_as_build:
