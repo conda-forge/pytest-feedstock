@@ -10,11 +10,11 @@ source:
 
 build:
   skip: true  # [py<36]
-  number: 1
+  number: 2
   script: {{ PYTHON }} setup.py install --single-version-externally-managed --record record.txt
   entry_points:
-    - py.test = py.test:console_main
-    - pytest = py.test:console_main
+    - pytest = pytest:console_main
+    - py.test = pytest:console_main
 
 requirements:
   build:
@@ -23,13 +23,12 @@ requirements:
   host:
     - pip
     - python
-    - setuptools >=40.0
-    - setuptools_scm
+    - setuptools >=42.0
+    - setuptools_scm >=3.4
   run:
     - python
     - attrs >=19.2.0
     - iniconfig
-    - more-itertools >=4.0.0
     - packaging
     - pluggy >=0.12,<2
     - py >=1.8.2
