@@ -32,7 +32,7 @@ requirements:
     - packaging
     - pluggy >=0.12,<2
     - py >=1.8.2
-    - toml
+    - tomli >=1.0.0
     - atomicwrites >=1.0  # [win]
     - colorama  # [win]
     - importlib-metadata >=0.12  # [py<38]
