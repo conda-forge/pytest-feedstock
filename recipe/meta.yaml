@@ -1,4 +1,4 @@
-{% set version = "6.2.5" %}
+{% set version = "7.0.0" %}
 
 package:
   name: pytest
@@ -6,11 +6,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pytest/pytest-{{ version }}.tar.gz
-  sha256: 131b36680866a76e6781d13f101efb86cf674ebb9762eb70d3082b6f29889e89
+  sha256: dad48ffda394e5ad9aa3b7d7ddf339ed502e5e365b1350e0af65f4a602344b11
 
 build:
   skip: true  # [py<36]
-  number: 2
+  number: 0
   script: {{ PYTHON }} setup.py install --single-version-externally-managed --record record.txt
   entry_points:
     - pytest = pytest:console_main
