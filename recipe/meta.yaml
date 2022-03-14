@@ -24,13 +24,13 @@ requirements:
     - pip
     - python
     - setuptools >=42.0
-    - setuptools_scm >=3.4
+    - setuptools_scm >=6.0
   run:
     - python
     - attrs >=19.2.0
     - iniconfig
     - packaging
-    - pluggy >=0.12,<2
+    - pluggy >=0.12,<2.0
     - py >=1.8.2
     - tomli >=1.0.0
     - atomicwrites >=1.0  # [win]
