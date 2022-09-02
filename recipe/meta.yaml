@@ -33,7 +33,6 @@ requirements:
     - pluggy >=0.12,<2.0
     - py >=1.8.2
     - tomli >=1.0.0
-    - atomicwrites >=1.0  # [win]
     - colorama  # [win]
     - importlib-metadata >=0.12  # [py<38]
   run_constrained:
