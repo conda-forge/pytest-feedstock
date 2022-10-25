@@ -9,12 +9,12 @@ source:
   sha256: 4f365fec2dff9c1162f834d9f18af1ba13062db0c708bf7b946f8a5c76180c39
 
 build:
-  skip: true  # [py<37]
-  number: 0
+  number: 1
   script: {{ PYTHON }} setup.py install --single-version-externally-managed --record record.txt
   entry_points:
     - pytest = pytest:console_main
     - py.test = pytest:console_main
+  noarch: python
 
 requirements:
   build:
@@ -22,19 +22,24 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
     - pip
-    - python
+    - python >=3.8
     - setuptools >=42.0
     - setuptools_scm >=6.0
   run:
-    - python
+    - python >=3.8
     - attrs >=19.2.0
     - iniconfig
     - packaging
     - pluggy >=0.12,<2.0
     - py >=1.8.2
     - tomli >=1.0.0
-    - colorama  # [win]
-    - importlib-metadata >=0.12  # [py<38]
+    {% if win %}
+    - colorama
+    - __win
+    {% else %}
+    - __unix
+    {% endif %}
+
   run_constrained:
     # pytest-faulthandler 2 is a dummy package.
     # if an older version of fault-handler is installed, it will conflict with pytest >=5.
