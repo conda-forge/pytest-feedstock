@@ -15,6 +15,9 @@ build:
     - pytest = pytest:console_main
     - py.test = pytest:console_main
   noarch: python
+  string: "win_pyh{{ PKG_HASH }}_{{ PKG_BUILDNUM }}"   # [win]
+  string: "unix_pyh{{ PKG_HASH }}_{{ PKG_BUILDNUM }}"  # [unix]
+
 
 requirements:
   build:
@@ -33,12 +36,9 @@ requirements:
     - pluggy >=0.12,<2.0
     - py >=1.8.2
     - tomli >=1.0.0
-    {% if win %}
-    - colorama
-    - __win
-    {% else %}
-    - __unix
-    {% endif %}
+    - colorama  # [win]
+    - __win     # [win]
+    - __unix    # [unix]
 
   run_constrained:
     # pytest-faulthandler 2 is a dummy package.
