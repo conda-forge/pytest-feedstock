@@ -9,8 +9,8 @@ source:
   sha256: c4014eb40e10f11f355ad4e3c2fb2c6c6d1919c73f3b5a433de4708202cade59
 
 build:
-  skip: true  # [py<37]
-  number: 1
+  number: 2
+  noarch: python
   script: {{ PYTHON }} setup.py install --single-version-externally-managed --record record.txt
   entry_points:
     - pytest = pytest:console_main
@@ -22,19 +22,21 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
     - pip
-    - python
+    - python >=3.8
     - setuptools >=42.0
     - setuptools_scm >=6.0
   run:
-    - python
+    - python >=3.8
     - attrs >=19.2.0
     - iniconfig
     - packaging
     - pluggy >=0.12,<2.0
-    - colorama  # [win]
-    - exceptiongroup  # [py<311]    
-    - importlib-metadata >=0.12  # [py<38]
     - tomli >=1.0.0
+    # colorama is needed only for windows, but okay to have for unix
+    # For eg: tqdm does the same thing
+    - colorama
+    # exceptiongroup should be only [py<311] but let's see if we can keep this noarch.
+    - exceptiongroup
   run_constrained:
     # pytest-faulthandler 2 is a dummy package.
     # if an older version of fault-handler is installed, it will conflict with pytest >=5.
