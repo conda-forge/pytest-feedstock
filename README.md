@@ -1,11 +1,11 @@
-About pytest
-============
+About pytest-feedstock
+======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pytest-feedstock/blob/main/LICENSE.txt)
 
 Home: https://docs.pytest.org/en/latest/
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pytest-feedstock/blob/main/LICENSE.txt)
 
 Summary: Simple and powerful testing with Python.
 
