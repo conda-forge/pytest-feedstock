@@ -24,7 +24,6 @@ requirements:
     - setuptools_scm >=6.0
   run:
     - python >=3.8
-    - attrs >=19.2.0
     - importlib-metadata >=0.12
     - iniconfig
     - packaging
