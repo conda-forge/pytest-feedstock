@@ -11,7 +11,7 @@ source:
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} setup.py install --single-version-externally-managed --record record.txt
+  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - pytest = pytest:console_main
     - py.test = pytest:console_main
@@ -24,7 +24,6 @@ requirements:
     - setuptools_scm >=6.0
   run:
     - python >=3.8
-    - importlib-metadata >=0.12
     - iniconfig
     - packaging
     - pluggy >=0.12,<2.0
@@ -33,7 +32,7 @@ requirements:
     # For eg: tqdm does the same thing
     - colorama
     # exceptiongroup should be only [py<311] but let's see if we can keep this noarch.
-    - exceptiongroup
+    - exceptiongroup >=1.0.0rc8
   run_constrained:
     # pytest-faulthandler 2 is a dummy package.
     # if an older version of fault-handler is installed, it will conflict with pytest >=5.
