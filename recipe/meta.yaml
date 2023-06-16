@@ -19,11 +19,11 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python >=3.7
     - setuptools >=42.0
     - setuptools_scm >=6.0
   run:
-    - python >=3.8
+    - python >=3.7
     - iniconfig
     - packaging
     - pluggy >=0.12,<2.0
