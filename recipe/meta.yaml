@@ -10,7 +10,7 @@ source:
 
 build:
   number: 0
-  noarch: python
+  # noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - pytest = pytest:console_main
@@ -19,11 +19,11 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python
     - setuptools >=42.0
     - setuptools_scm >=6.0
   run:
-    - python >=3.8
+    - python
     - iniconfig
     - packaging
     - pluggy <2.0,>=1.4.0
