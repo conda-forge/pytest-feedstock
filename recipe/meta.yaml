@@ -44,6 +44,16 @@ requirements:
 test:
   source_files:
     - testing/
+    - pyproject.toml
+  requires:
+    - argcomplete
+    - attrs
+    - hypothesis
+    - mock
+    - pygments
+    - requests
+    - setuptools
+    - xmlschema
   commands:
     - pytest -h
     - pytest
