@@ -11,7 +11,10 @@ source:
 build:
   number: 0
   # noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script:
+    - export SETUPTOOLS_SCM_PRETEND_VERSION="$PKG_VERSION"  # [unix]
+    - set "SETUPTOOLS_SCM_PRETEND_VERSION=%PKG_VERSION%"    # [win]
+    - {{ PYTHON }} -m pip install . -vv
   entry_points:
     - pytest = pytest:console_main
     - py.test = pytest:console_main
