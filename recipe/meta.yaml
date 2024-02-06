@@ -5,8 +5,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/p/pytest/pytest-{{ version }}.tar.gz
-  sha256: 249b1b0864530ba251b7438274c4d251c58d868edaaec8762893ad4a0d71c36c
+  url: https://github.com/pytest-dev/pytest/archive/refs/tags/{{ version }}.tar.gz
+  sha256: 53cb6cfe76acd84a8f8279556748bb72e8c4a1be316aa50f5bfb900257aa004b
 
 build:
   number: 0
@@ -39,8 +39,11 @@ requirements:
     - pytest-faulthandler >=2
 
 test:
+  source_files:
+    - testing/
   commands:
     - pytest -h
+    - pytest
   imports:
     - pytest
 
