@@ -20,8 +20,8 @@ requirements:
   host:
     - pip
     - python >=3.8
-    - setuptools >=42.0
-    - setuptools_scm >=6.0
+    - setuptools >=61
+    - setuptools_scm >=6.2.3
   run:
     - python >=3.8
     - iniconfig
