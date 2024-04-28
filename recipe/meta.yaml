@@ -1,4 +1,4 @@
-{% set version = "8.1.2" %}
+{% set version = "8.2.0" %}
 
 package:
   name: pytest
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pytest/pytest-{{ version }}.tar.gz
-  sha256: f3c45d1d5eed96b01a2aea70dee6a4a366d51d38f9957768083e4fecfc77f3ef
+  sha256: d507d4482197eac0ba2bae2e9babf0672eb333017bcedaa5fb1a3d42c1174b3f
 
 build:
   number: 0
@@ -26,7 +26,7 @@ requirements:
     - python >=3.8
     - iniconfig
     - packaging
-    - pluggy <2.0,>=1.4
+    - pluggy <2.0,>=1.5
     - tomli >=1
     # colorama is needed only for windows, but okay to have for unix
     # For eg: tqdm does the same thing
