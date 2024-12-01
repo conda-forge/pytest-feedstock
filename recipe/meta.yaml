@@ -1,5 +1,5 @@
 {% set version = "8.3.4" %}
-
+{% set python_min = "3.8" %}
 package:
   name: pytest
   version: {{ version }}
@@ -19,11 +19,11 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools >=61
     - setuptools_scm >=6.2.3
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - iniconfig
     - packaging
     - pluggy <2,>=1.5
@@ -39,6 +39,8 @@ requirements:
     - pytest-faulthandler >=2
 
 test:
+  requires:
+    - python {{ python_min }}
   commands:
     - pytest -h
   imports:
