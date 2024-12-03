@@ -1,5 +1,4 @@
 {% set version = "8.3.4" %}
-{% set python_min = "3.8" %}
 package:
   name: pytest
   version: {{ version }}
