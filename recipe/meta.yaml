@@ -1,14 +1,14 @@
-{% set version = "8.3.4" %}
+{% set version = "8.3.5" %}
 package:
   name: pytest
   version: {{ version }}
 
 source:
   url: https://pypi.org/packages/source/p/pytest/pytest-{{ version }}.tar.gz
-  sha256: 965370d062bce11e73868e0335abac31b4d3de0e82f4007408d242b4f8610761
+  sha256: f4efe70cc14e511565ac476b57c279e12a855b11f48f212af1080ef2263d3845
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
