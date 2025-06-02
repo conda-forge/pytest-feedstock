@@ -1,11 +1,11 @@
-{% set version = "8.3.5" %}
+{% set version = "8.4.0" %}
 package:
   name: pytest
   version: {{ version }}
 
 source:
   url: https://pypi.org/packages/source/p/pytest/pytest-{{ version }}.tar.gz
-  sha256: f4efe70cc14e511565ac476b57c279e12a855b11f48f212af1080ef2263d3845
+  sha256: 14d920b48472ea0dbf68e45b96cd1ffda4705f33307dcc86c676c1b5104838a6
 
 build:
   number: 0
@@ -22,16 +22,17 @@ requirements:
     - setuptools >=61
     - setuptools_scm >=6.2.3
   run:
+    - pygments >=2.7.2
     - python >={{ python_min }}
-    - iniconfig
-    - packaging
-    - pluggy <2,>=1.5
+    - iniconfig >=1
+    - packaging >=20
+    - pluggy >=1.5,<2
     - tomli >=1
     # colorama is needed only for windows, but okay to have for unix
     # For eg: tqdm does the same thing
     - colorama
     # exceptiongroup should be only [py<311] but let's see if we can keep this noarch.
-    - exceptiongroup >=1.0.0rc8
+    - exceptiongroup >=1
   run_constrained:
     # pytest-faulthandler 2 is a dummy package.
     # if an older version of fault-handler is installed, it will conflict with pytest >=5.
