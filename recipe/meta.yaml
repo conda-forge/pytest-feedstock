@@ -30,7 +30,7 @@ requirements:
     - tomli >=1
     # colorama is needed only for windows, but okay to have for unix
     # For eg: tqdm does the same thing
-    - colorama
+    - colorama >=0.4
     # exceptiongroup should be only [py<311] but let's see if we can keep this noarch.
     - exceptiongroup >=1
   run_constrained:
