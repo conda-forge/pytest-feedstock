@@ -14,4 +14,5 @@ provider:
   win: azure
 conda_build:
   pkg_format: '2'
+conda_build_tool: rattler-build
 test: native_and_emulated

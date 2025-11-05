@@ -1,29 +1,34 @@
-{% set version = "8.4.2" %}
+schema_version: 1
+
+context:
+  version: 8.4.2
+
 package:
   name: pytest
-  version: {{ version }}
+  version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/p/pytest/pytest-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/p/pytest/pytest-${{ version }}.tar.gz
   sha256: 86c0d0b93306b961d58d62a4db4879f27fe25513d4b969df351abdddb3c30e01
 
 build:
-  number: 0
+  number: 1
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
-  entry_points:
-    - pytest = pytest:console_main
-    - py.test = pytest:console_main
+  script: ${{ PYTHON }} -m pip install . -vv
+  python:
+    entry_points:
+      - pytest = pytest:console_main
+      - py.test = pytest:console_main
 
 requirements:
   host:
     - pip
-    - python {{ python_min }}
+    - python ${{ python_min }}.*
     - setuptools >=61
     - setuptools_scm >=6.2.3
   run:
     - pygments >=2.7.2
-    - python >={{ python_min }}
+    - python >=${{ python_min }}
     - iniconfig >=1
     - packaging >=20
     - pluggy >=1.5,<2
@@ -33,29 +38,31 @@ requirements:
     - colorama >=0.4
     # exceptiongroup should be only [py<311] but let's see if we can keep this noarch.
     - exceptiongroup >=1
-  run_constrained:
-    # pytest-faulthandler 2 is a dummy package.
-    # if an older version of fault-handler is installed, it will conflict with pytest >=5.
+  run_constraints:
     - pytest-faulthandler >=2
 
-test:
-  requires:
-    - python {{ python_min }}
-  commands:
-    - pytest -h
-  imports:
-    - pytest
+tests:
+  - python:
+      imports:
+        - pytest
+      python_version:
+        - ${{ python_min }}.*
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+    script:
+      - pytest -h
 
 about:
-  home: https://docs.pytest.org/en/latest/
   license: MIT
   license_file: LICENSE
   summary: Simple and powerful testing with Python.
   description: |
     The pytest framework makes it easy to write small tests, yet scales to
     support complex functional testing for applications and libraries.
-  doc_url: https://docs.pytest.org/en/latest/
-  dev_url: https://github.com/pytest-dev/pytest/
+  homepage: https://docs.pytest.org/en/latest/
+  repository: https://github.com/pytest-dev/pytest/
+  documentation: https://docs.pytest.org/en/latest/
 
 extra:
   recipe-maintainers:
