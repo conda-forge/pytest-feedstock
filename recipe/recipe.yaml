@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "9.0.1"
+  version: "9.0.2"
   python_min: "3.10"
 
 package:
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/p/pytest/pytest-${{ version }}.tar.gz
-  sha256: 3e9c069ea73583e255c3b21cf46b8d3c56f6e3a1a8f6da94ccb0fcf57b9d73c8
+  sha256: 75186651a92bd89611d1d9fc20f0b4345fd827c41ccd5c299a868a05d70edf11
 
 build:
   number: 0
