@@ -1,8 +1,8 @@
 schema_version: 1
 
 context:
-  version: "9.0.2"
-  python_min: "3.10"
+  version: 9.0.3
+  python_min: '3.10'
 
 package:
   name: pytest
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/p/pytest/pytest-${{ version }}.tar.gz
-  sha256: 75186651a92bd89611d1d9fc20f0b4345fd827c41ccd5c299a868a05d70edf11
+  sha256: b86ada508af81d19edeb213c681b1d48246c1a91d304c6c81a427674c17eb91c
 
 build:
   number: 0
@@ -34,10 +34,6 @@ requirements:
     - packaging >=22
     - pluggy >=1.5,<2
     - tomli >=1
-    # colorama is needed only for windows, but okay to have for unix
-    # For eg: tqdm does the same thing
-    - colorama >=0.4
-    # exceptiongroup should be only [py<311] but let's see if we can keep this noarch.
     - exceptiongroup >=1
   run_constraints:
     - pytest-faulthandler >=2
