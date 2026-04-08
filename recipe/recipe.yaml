@@ -13,7 +13,7 @@ source:
   sha256: b86ada508af81d19edeb213c681b1d48246c1a91d304c6c81a427674c17eb91c
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv
   python:
@@ -28,6 +28,7 @@ requirements:
     - setuptools >=77
     - setuptools_scm >=6.2.3
   run:
+    - colorama >=0.4
     - pygments >=2.7.2
     - python >=${{ python_min }}
     - iniconfig >=1.0.1
