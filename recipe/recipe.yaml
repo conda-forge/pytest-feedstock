@@ -13,13 +13,13 @@ source:
   sha256: 41dd9148c08072446394cefd3d79701701335a9f4cae69ba92e39f6c7f5c061c
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv
   python:
     entry_points:
-      - pytest = pytest:console_main
-      - py.test = pytest:console_main
+      - pytest = _pytest.config:_console_main
+      - py.test = _pytest.config:_console_main
 
 requirements:
   host:
