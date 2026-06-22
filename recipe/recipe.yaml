@@ -13,7 +13,7 @@ source:
   sha256: 1088fbde8f2b49d95a549a195707afa7a76a3ce9bcadc26b6d71f0ffda5fe313
 
 build:
-  number: 1
+  number: 2
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv
   python:
@@ -28,6 +28,7 @@ requirements:
     - setuptools >=77
     - setuptools_scm >=6.2.3
   run:
+    - colorama
     - pygments >=2.7.2
     - python >=${{ python_min }}
     - iniconfig >=1.0.1
@@ -46,8 +47,10 @@ tests:
         - ${{ python_min }}.*
   - requirements:
       run:
+        - pip
         - python ${{ python_min }}.*
     script:
+      - pip check
       - pytest -h
 
 about:
