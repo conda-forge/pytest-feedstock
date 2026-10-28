@@ -13,7 +13,7 @@ source:
   sha256: 97c4f3b1f3c7414aa36465e09b8220f1d03627993bd51b1282e193753c80557b
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv
   python:
@@ -28,6 +28,8 @@ requirements:
     - setuptools >=77
     - setuptools_scm >=10.1
   run:
+    # Do not remove 'colorama': always included, even on non-Windows, to keep package no-arch (#206).
+    - colorama
     - python >=${{ python_min }}
     - exceptiongroup >=1
     - iniconfig >=2
