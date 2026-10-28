@@ -1,7 +1,5 @@
 bot:
   inspection: update-grayskull
-build_platform:
-  osx_arm64: osx_64
 conda_forge_output_validation: true
 github:
   branch_name: main
@@ -12,6 +10,7 @@ provider:
   linux_ppc64le: azure
   osx: azure
   win: azure
+  osx_arm64: default
 conda_build:
   pkg_format: '2'
 conda_build_tool: rattler-build
