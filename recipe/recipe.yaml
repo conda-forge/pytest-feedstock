@@ -26,15 +26,16 @@ requirements:
     - pip
     - python ${{ python_min }}.*
     - setuptools >=77
-    - setuptools_scm >=6.2.3
+    - setuptools_scm >=10.1
   run:
-    - pygments >=2.15
     - python >=${{ python_min }}
+    - exceptiongroup >=1
     - iniconfig >=2
     - packaging >=24
     - pluggy >=1.6,<2
+    - pygments >=2.15
     - tomli >=2
-    - exceptiongroup >=1
+
   run_constraints:
     - pytest-faulthandler >=2
 
