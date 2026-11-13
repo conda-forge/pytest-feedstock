@@ -194,7 +194,6 @@ Feedstock Maintainers
 =====================
 
 * [@flub](https://github.com/flub/)
-* [@goanpeca](https://github.com/goanpeca/)
 * [@mingwandroid](https://github.com/mingwandroid/)
 * [@nicoddemus](https://github.com/nicoddemus/)
 * [@ocefpaf](https://github.com/ocefpaf/)
